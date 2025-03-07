@@ -12,35 +12,44 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
-            background: url('https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/434040129_725895449733864_5707039122419978595_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rOjMyGXUMekQ7kNvgGfA_Qz&_nc_oc=Adi1W-fw7kIiwnV1X3jL3bOdN1T_oBfYiPiDC9nMq9wrXx_35MujO0LZNgx7srbb44A&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=An0QBOG7nnSpIVOD9UiX-Ey&oh=00_AYBnOqTX_zDs0HW798Lh9Cw6EQoE-0AdZV9tLcfdiqxaUg&oe=67CAC77C') no-repeat center center fixed;
-            background-size: cover; /* Cubre toda la pantalla */
+            background-color: #000; /* Fondo negro */
             font-family: 'Times New Roman', serif;
-            animation: moveBackground 10s linear infinite; /* Animación del fondo */
         }
-        @keyframes moveBackground {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 2% 2%; /* Mueve el fondo ligeramente */
-            }
-            100% {
-                background-position: 0% 0%;
-            }
+        /* Líneas doradas en las esquinas */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ffd700; /* Color dorado */
+        }
+        body::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+        body::after {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); /* Sombra dorada */
             position: relative;
             z-index: 2;
             max-width: 600px;
             margin: 0 auto;
             margin-top: 50px;
+            border: 2px solid #ffd700; /* Borde dorado */
         }
         h1 {
-            color: #4B0082; /* Color morado para la graduación */
+            color: #ffd700; /* Color dorado */
             font-size: 48px;
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -48,7 +57,7 @@
         }
         .message {
             font-size: 24px;
-            color: #4B0082;
+            color: #ffd700; /* Color dorado */
             margin-top: 20px;
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -60,8 +69,8 @@
             animation: fadeIn 2s forwards;
         }
         .btn {
-            background-color: #800080; /* Color morado */
-            color: white;
+            background-color: #ffd700; /* Color dorado */
+            color: #000; /* Texto negro */
             border: none;
             padding: 10px 20px;
             font-size: 24px;
@@ -73,7 +82,7 @@
             animation: fadeIn 2s forwards;
         }
         .btn:hover {
-            background-color: #4B0082; /* Color morado más oscuro */
+            background-color: #ffdf4d; /* Color dorado más claro */
         }
         .photo-gallery {
             display: none;
@@ -92,6 +101,7 @@
             transform: translateX(-50%);
             opacity: 0;
             transition: opacity 1s ease-in-out; /* Transición suave */
+            border: 2px solid #ffd700; /* Borde dorado */
         }
         .heart {
             position: absolute;
