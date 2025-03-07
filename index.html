@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicidades mi amor, te graduaste 🎓💖</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: url('https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/434040129_725895449733864_5707039122419978595_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rOjMyGXUMekQ7kNvgGfA_Qz&_nc_oc=Adi1W-fw7kIiwnV1X3jL3bOdN1T_oBfYiPiDC9nMq9wrXx_35MujO0LZNgx7srbb44A&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=An0QBOG7nnSpIVOD9UiX-Ey&oh=00_AYBnOqTX_zDs0HW798Lh9Cw6EQoE-0AdZV9tLcfdiqxaUg&oe=67CAC77C') no-repeat center center fixed;
+            background-size: cover; /* Cubre toda la pantalla */
+            font-family: 'Times New Roman', serif;
+            animation: moveBackground 10s linear infinite; /* Animación del fondo */
+        }
+        @keyframes moveBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 2% 2%; /* Mueve el fondo ligeramente */
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #4B0082; /* Color morado para la graduación */
+            font-size: 48px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            margin-bottom: 20px; /* Separación del título con el primer párrafo */
+        }
+        .message {
+            font-size: 24px;
+            color: #4B0082;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .sticker {
+            width: 300px; /* Stickers más grandes */
+            margin: 10px auto; /* Centrar el sticker */
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .btn {
+            background-color: #800080; /* Color morado */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .btn:hover {
+            background-color: #4B0082; /* Color morado más oscuro */
+        }
+        .photo-gallery {
+            display: none;
+            margin-top: 20px;
+            position: relative;
+            height: 500px; /* Altura fija para la galería */
+        }
+        .photo-gallery img {
+            width: 90%; /* Imágenes más grandes */
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 10px auto;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out; /* Transición suave */
+        }
+        .heart-animation {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://i.pinimg.com/originals/2d/7b/c3/2d7bc3bb00389ff13f55c5432b5bd5c5.gif') no-repeat center center;
+            background-size: contain;
+            animation: heartEffect 4s linear infinite;
+            opacity: 0;
+        }
+        @keyframes heartEffect {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            25% {
+                opacity: 1;
+                transform: scale(1) rotate(90deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+            75% {
+                opacity: 1;
+                transform: scale(1) rotate(270deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(360deg);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido principal -->
+    <div class="container" id="container">
+        <!-- Título separado del primer párrafo -->
+        <h1>Felicidades mi amor, te graduaste! 🎓💖</h1>
+
+        <!-- Primer párrafo -->
+        <div class="message" id="message1">
+            Quiero que la pases super bien este día, mi amorcito. 💖 Ya pasas a una etapa más en tu vida, y cada paso que des te dejará una lección y que aprendas de ello, mi amor. Sabes que estaré ahí para ti en cada momento de tu vida, mi niña. Yo sé que podrás cumplir cada sueño. 🌟
+        </div>
+        <!-- Sticker debajo del primer párrafo -->
+        <img src="https://i.pinimg.com/originals/b2/c8/5b/b2c85bda67c05e092c5c0d53aeda26f7.gif" alt="Felicidades mi amor" class="sticker">
+        <button class="btn" id="nextButton1" onclick="showNext(2)">Siguiente ❤️</button>
+    </div>
+
+    <!-- Segundo párrafo (oculto inicialmente) -->
+    <div class="container" id="container2" style="display: none;">
+        <div class="message" id="message2">
+            Mi amor, superaste obstáculos complicados para llegar a donde estás y poder hacer todo lo que ahora haces. ¡Venga, siempre pudiste y siempre lo harás! 💪 Quiero que logres ese gran sueño que me contaste hace 4 años atrás, amor: de ser una gran criminóloga que desde pequeña querías ser. 🕵️‍♀️ Ahora, en la actualidad, sé que tienes ese sueño fijado y que tienes la meta de salir en Investigation Discovery, de poder atrapar a un asesino en serie que es psicópata. ¡Tú lo harás, mi amor, siempre! 💖
+        </div>
+        <!-- Sticker debajo del segundo párrafo -->
+        <img src="https://media.tenor.com/qO8LJB0jccwAAAAj/snoopy-magic.gif" alt="Sticker mágico" class="sticker">
+        <button class="btn" id="nextButton2" onclick="showNext(3)">Siguiente ❤️</button>
+    </div>
+
+    <!-- Tercer párrafo (oculto inicialmente) -->
+    <div class="container" id="container3" style="display: none;">
+        <div class="message" id="message3">
+            Te amoooo muchísimo, mi amoooor. 💕 Quiero que sepas que siempre estaré aquí para apoyarte en todo lo que necesites. Eres mi inspiración y mi razón para sonreír cada día. ¡Felicidades, mi vida! 🎉
+        </div>
+        <!-- Sticker debajo del tercer párrafo -->
+        <img src="https://media.tenor.com/Jloq3y4mk8kAAAAj/amor-love.gif" alt="Sticker de amor" class="sticker">
+        <button class="btn" id="nextButton3" onclick="showNext(4)">Ver Fotos ❤️</button>
+    </div>
+
+    <!-- Galería de fotos (oculta inicialmente) -->
+    <div class="photo-gallery" id="photo-gallery">
+        <!-- Corazones animados -->
+        <div class="heart-animation" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="heart-animation" style="top: 10%; right: 10%; animation-delay: 1s;"></div>
+        <div class="heart-animation" style="bottom: 10%; left: 10%; animation-delay: 2s;"></div>
+        <div class="heart-animation" style="bottom: 10%; right: 10%; animation-delay: 3s;"></div>
+        <div class="heart-animation" style="top: 50%; left: 5%; animation-delay: 0.5s;"></div>
+        <div class="heart-animation" style="top: 50%; right: 5%; animation-delay: 1.5s;"></div>
+
+        <!-- Fotos -->
+        <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/277528305_5125158534226738_5557394570319132549_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOdgahh86PUUQfltKkK6ery81H-ei4xEPLzUf56LjEQ1Pa8B2i3db_0eek97_Mdy772PWz0xFir-rp8yvRD8CZ&_nc_ohc=Rwn4ZFIAA0QQ7kNvgHFWTyG&_nc_oc=Adhjw84YbZjxZtcXubnduPwihqC4k74wiepZHQd71_s9-z1aQvVpVXeoCP3M7FoUQF8&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=AYT1u8GIT43FchHpOrd_8gm&oh=00_AYGZAbAeQJfU6T_LcQhwuIuaNigcSI7PbFKnqWmomn5JPQ&oe=67CFDB38" alt="Foto 1" class="photo">
+        <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/464432098_8769121779830377_3150631763242469822_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGraJCkypPJtcPYjbrpw75r4JRU8auj7RjglFTxq6PtGEfCmEWfJL0qSgQl7E7gfnq_cvKhby1C_0uRf4PEldq9&_nc_ohc=Wjiv_tSBPh4Q7kNvgEO9sfB&_nc_oc=Adjr9oGZd55q_bgGIUzTjUmxO1Eh4AxO3usaJ70lVE4QrOzXADMq5JJ-AcGChz5hPr8&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=A8EMlQTRXDnoIzmY5eKLhz6&oh=00_AYHLYawYY3I6aGgCsP-gfEPXlLNB8tzwCOkvtmNVznizsw&oe=67CFFF45" alt="Foto 2" class="photo">
+        <img src="https://scontent.fgye5-2.fna.fbcdn.net/v/t39.30808-6/277588302_5125159844226607_3585530997236021445_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF5TT7gVtblsXO3vwwOR8yNAIjHeSU4xIMAiMd5JTjEg8lDQQCj6KGq-49oDEdtrXdQeyCAvuXp6Kgkz2CSnFv7&_nc_ohc=xNO9L0uBDlIQ7kNvgHGUGGy&_nc_oc=AdjgMQRUZ2_PPejsytBwZQZZspltMicOPWAiGAYfLuEp4Qjh3popgLCLWctCHEetKGw&_nc_zt=23&_nc_ht=scontent.fgye5-2.fna&_nc_gid=A6As_pyV0iSnV3ag7HsKTB3&oh=00_AYFZZF83-Z52-F-9iuboBcpjAl8U2ne1FjRhQbDRjOdoNg&oe=67D00529" alt="Foto 3" class="photo">
+        <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t1.6435-9/90248467_2909593515783262_6427873554414436352_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFft9U3a7eRxZJU2XEn0o9p2XM46kVD3krZczjqRUPeSo0amagJnSEKHaMdTNT70923_Bn06bjRXb1TTN7m19CO&_nc_ohc=ma6VMkHVWYAQ7kNvgHrflWP&_nc_oc=AdgQW2KJSQqvl1A1i-sovaMKwQHGFLxNsXQvLkmWmf6StZwvwL12BxheQ7Xa2awsIBg&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=AfHemBL7sojKwq1eYDuHnur&oh=00_AYEJhG06-FQL0QTfm206PNAQpBvyanBNa-bWQbvvMaedEw&oe=67F17A74" alt="Foto 4" class="photo">
+        <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t1.6435-9/52983623_2141700295905925_127752273211162624_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHcjsMSF3bQTNFVJq2k3BOzPh32M3_NcRI-HfYzf81xEulZ2rTs3I_yv2dXOqy1AFc9nw4sttUrSyk3jf4F5XWZ&_nc_ohc=34qYaRKxmF4Q7kNvgE_JMiC&_nc_oc=AdgRzXxjI4MexPTkOaFAUE0UbI13cu3Ij7iS1fUycx-6totrEhq_Ng7cjlSXoVFst7U&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=A6nCh4B_Y6CbaGE2y_DV6mt&oh=00_AYECGCpW-1AViglQBoMdE3QN5vjtTuV8pWFlfPmrJIa52w&oe=67F191B7" alt="Foto 5" class="photo">
+    </div>
+
+    <!-- Música de fondo -->
+    <audio id="background-music" autoplay loop>
+        <source src="https://www.youtube.com/watch?v=nSDgHBxUbVQ" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script>
+        let currentStep = 1;
+        let currentPhotoIndex = 0;
+        const photos = document.querySelectorAll('.photo-gallery img');
+        const photoGallery = document.getElementById('photo-gallery');
+
+        function showNext(step) {
+            if (step === 2) {
+                document.getElementById('container').style.display = 'none';
+                document.getElementById('container2').style.display = 'block';
+            } else if (step === 3) {
+                document.getElementById('container2').style.display = 'none';
+                document.getElementById('container3').style.display = 'block
