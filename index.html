@@ -15,41 +15,19 @@
             background-color: #000; /* Fondo negro */
             font-family: 'Times New Roman', serif;
         }
-        /* Líneas doradas en las esquinas */
-        body::before,
-        body::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border: 2px solid #ffd700; /* Color dorado */
-        }
-        body::before {
-            top: 0;
-            left: 0;
-            border-right: none;
-            border-bottom: none;
-        }
-        body::after {
-            top: 0;
-            right: 0;
-            border-left: none;
-            border-bottom: none;
-        }
         .container {
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); /* Sombra dorada */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 2;
             max-width: 600px;
             margin: 0 auto;
             margin-top: 50px;
-            border: 2px solid #ffd700; /* Borde dorado */
         }
         h1 {
-            color: #ffd700; /* Color dorado */
+            color: #ff1493; /* Color rosa */
             font-size: 48px;
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -57,7 +35,7 @@
         }
         .message {
             font-size: 24px;
-            color: #ffd700; /* Color dorado */
+            color: #ff1493; /* Color rosa */
             margin-top: 20px;
             opacity: 0;
             animation: fadeIn 2s forwards;
@@ -69,8 +47,8 @@
             animation: fadeIn 2s forwards;
         }
         .btn {
-            background-color: #ffd700; /* Color dorado */
-            color: #000; /* Texto negro */
+            background-color: #ff1493; /* Color rosa */
+            color: white;
             border: none;
             padding: 10px 20px;
             font-size: 24px;
@@ -82,7 +60,7 @@
             animation: fadeIn 2s forwards;
         }
         .btn:hover {
-            background-color: #ffdf4d; /* Color dorado más claro */
+            background-color: #ff69b4; /* Color rosa más claro */
         }
         .photo-gallery {
             display: none;
@@ -101,7 +79,6 @@
             transform: translateX(-50%);
             opacity: 0;
             transition: opacity 1s ease-in-out; /* Transición suave */
-            border: 2px solid #ffd700; /* Borde dorado */
         }
         .heart {
             position: absolute;
