@@ -93,35 +93,40 @@
             opacity: 0;
             transition: opacity 1s ease-in-out; /* Transición suave */
         }
-        .heart-animation {
+        .heart {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background: url('https://i.pinimg.com/originals/2d/7b/c3/2d7bc3bb00389ff13f55c5432b5bd5c5.gif') no-repeat center center;
-            background-size: contain;
-            animation: heartEffect 4s linear infinite;
-            opacity: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #ff1493; /* Color rosa */
+            transform: rotate(-45deg);
+            animation: heartBeat 1.5s infinite;
         }
-        @keyframes heartEffect {
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #ff1493; /* Color rosa */
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -20px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: 20px;
+        }
+        @keyframes heartBeat {
             0% {
-                opacity: 0;
-                transform: scale(0.5) rotate(0deg);
-            }
-            25% {
-                opacity: 1;
-                transform: scale(1) rotate(90deg);
+                transform: rotate(-45deg) scale(1);
             }
             50% {
-                opacity: 1;
-                transform: scale(1.2) rotate(180deg);
-            }
-            75% {
-                opacity: 1;
-                transform: scale(1) rotate(270deg);
+                transform: rotate(-45deg) scale(1.2);
             }
             100% {
-                opacity: 0;
-                transform: scale(0.5) rotate(360deg);
+                transform: rotate(-45deg) scale(1);
             }
         }
         @keyframes fadeIn {
@@ -167,14 +172,6 @@
 
     <!-- Galería de fotos (oculta inicialmente) -->
     <div class="photo-gallery" id="photo-gallery">
-        <!-- Corazones animados -->
-        <div class="heart-animation" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
-        <div class="heart-animation" style="top: 10%; right: 10%; animation-delay: 1s;"></div>
-        <div class="heart-animation" style="bottom: 10%; left: 10%; animation-delay: 2s;"></div>
-        <div class="heart-animation" style="bottom: 10%; right: 10%; animation-delay: 3s;"></div>
-        <div class="heart-animation" style="top: 50%; left: 5%; animation-delay: 0.5s;"></div>
-        <div class="heart-animation" style="top: 50%; right: 5%; animation-delay: 1.5s;"></div>
-
         <!-- Fotos -->
         <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/277528305_5125158534226738_5557394570319132549_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHOdgahh86PUUQfltKkK6ery81H-ei4xEPLzUf56LjEQ1Pa8B2i3db_0eek97_Mdy772PWz0xFir-rp8yvRD8CZ&_nc_ohc=Rwn4ZFIAA0QQ7kNvgHFWTyG&_nc_oc=Adhjw84YbZjxZtcXubnduPwihqC4k74wiepZHQd71_s9-z1aQvVpVXeoCP3M7FoUQF8&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=AYT1u8GIT43FchHpOrd_8gm&oh=00_AYGZAbAeQJfU6T_LcQhwuIuaNigcSI7PbFKnqWmomn5JPQ&oe=67CFDB38" alt="Foto 1" class="photo">
         <img src="https://scontent.fgye5-3.fna.fbcdn.net/v/t39.30808-6/464432098_8769121779830377_3150631763242469822_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGraJCkypPJtcPYjbrpw75r4JRU8auj7RjglFTxq6PtGEfCmEWfJL0qSgQl7E7gfnq_cvKhby1C_0uRf4PEldq9&_nc_ohc=Wjiv_tSBPh4Q7kNvgEO9sfB&_nc_oc=Adjr9oGZd55q_bgGIUzTjUmxO1Eh4AxO3usaJ70lVE4QrOzXADMq5JJ-AcGChz5hPr8&_nc_zt=23&_nc_ht=scontent.fgye5-3.fna&_nc_gid=A8EMlQTRXDnoIzmY5eKLhz6&oh=00_AYHLYawYY3I6aGgCsP-gfEPXlLNB8tzwCOkvtmNVznizsw&oe=67CFFF45" alt="Foto 2" class="photo">
@@ -201,4 +198,42 @@
                 document.getElementById('container2').style.display = 'block';
             } else if (step === 3) {
                 document.getElementById('container2').style.display = 'none';
-                document.getElementById('container3').style.display = 'block
+                document.getElementById('container3').style.display = 'block';
+            } else if (step === 4) {
+                document.getElementById('container3').style.display = 'none';
+                photoGallery.style.display = 'block';
+                startPhotoCarousel();
+                createHearts(); // Crear corazones al mostrar la galería
+            }
+        }
+
+        function startPhotoCarousel() {
+            setInterval(() => {
+                // Oculta la foto actual
+                photos[currentPhotoIndex].style.opacity = 0;
+
+                // Avanza al siguiente índice
+                currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+
+                // Muestra la siguiente foto
+                photos[currentPhotoIndex].style.opacity = 1;
+            }, 3000); // Cambia de foto cada 3 segundos
+        }
+
+        function createHearts() {
+            const numHearts = 50; // Número de corazones
+            for (let i = 0; i < numHearts; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 2}s`; // Retraso aleatorio
+                document.body.appendChild(heart);
+            }
+        }
+
+        // Reproducir música de fondo automáticamente
+        document.getElementById('background-music').play();
+    </script>
+</body>
+</html>
